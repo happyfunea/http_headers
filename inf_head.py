@@ -20,7 +20,7 @@ class infoUrl:
         #single url
 
 class main:
-    #staticmethod
+    
     def single_pars(self,ar):
         try:
             self.gets_inf = requests.get(ar)
@@ -37,7 +37,6 @@ class main:
             print (f'http://{ar} [BAD]')
             exit()
 
-    #@staticmethod
     def mas_pars(self, arg):
         try:
             self.gets_inf = requests.get(arg)
@@ -58,7 +57,6 @@ class main:
             print (f'http://{arg} is [BAD]')
             pass
 
-    #@staticmethod
     def thread(self, *args):
         try:
             with open(y,'r') as sebagai:
