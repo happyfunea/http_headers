@@ -33,6 +33,9 @@ class main:
                         print (f'{colors.colorku().under} |_{c}: {colors.colorku().yellow}{self.gets_inf.headers[c]}')
                     else:
                         pass
+            if self.gets_inf.status_code != 200:
+                print (f'{colors.colorku().normal}[!]Url Bad: {colors.colorku().red}{ar}')
+                pass
         except requests.exceptions.MissingSchema:
             print (f'http://{ar} [BAD]')
             exit()
@@ -108,7 +111,7 @@ if __name__=='__main__':
         elif asker == '2':
             y = input('[Path Url]: ')
             main().thread(y)
-            ask = input(f'{colors.colorku().normal}[!] [B]ack to menu {colors.colorku().red}(or){colors.colorku().normal} [E]xit: ')
+            ask = input(f'{colors.colorku().normal}[!] [B]ack to menu {colors.colorku().red}(or){colors.colorku().normal} [E]xit: ').lower()
             if ask in 'b':
                 call(['clear'],shell=True)
                 print (recursiv())
