@@ -36,6 +36,8 @@ class main:
             if self.gets_inf.status_code != 200:
                 print (f'{colors.colorku().normal}[!]Url Bad: {colors.colorku().red}{ar}')
                 pass
+        except requests.exceptions.Timeout:
+            print ('[!] Connection Error!!!!')
         except requests.exceptions.MissingSchema:
             print (f'http://{ar} [BAD]')
             exit()
@@ -56,6 +58,8 @@ class main:
                     print (f'{colors.colorku().under} |_[**]{m}: {colors.colorku().yellow}{self.gets_inf.headers[m]}')
                 else:
                     pass
+        except requests.exceptions.Timeout:
+            print ('[!] Connection Error!!!')
         except requests.exceptions.MissingSchema:
             print (f'http://{arg} is [BAD]')
             pass
@@ -113,7 +117,7 @@ if __name__=='__main__':
             main().thread(y)
             ask = input(f'{colors.colorku().normal}[!] [B]ack to menu {colors.colorku().red}(or){colors.colorku().normal} [E]xit: ').lower()
             if ask in 'b':
-                call(['clear'],shell=True)
+                call(['clear'],shell=thx_inf)
                 print (recursiv())
             elif ask == 'e':
                 print (f'{colors.colorku().normal}[!] exit..')
